@@ -9,7 +9,7 @@ import net.scmods.RandomRedstone;
 
 public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEntityHost.Hosted {
     private int power = 0;
-    private int delay = 10;
+    private int delay = 1;
     private float period = (float)(Math.PI * 2.0 / 10);
     private int ticks = 0;
     private boolean latched = false;
@@ -20,13 +20,13 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
 
     public void set(int value) {
         delay = value;
-        period = (float)(Math.PI * 2.0 / value);
+        period = (float)(Math.PI * 2.0 / (value * 10));
     }
 
     @Override
     public void tick()
     {
-        if (ticks >= 10) {
+        if (ticks >= (delay * 10)) {
             this.latched = false;
             assert this.world != null;
             this.world.updateNeighbors(getPos(), getCachedState().getBlock());

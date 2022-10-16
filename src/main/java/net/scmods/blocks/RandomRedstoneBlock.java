@@ -41,9 +41,7 @@ public class RandomRedstoneBlock extends Block implements BlockEntityHost {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        RandomRedstoneBlockEntity ent = new RandomRedstoneBlockEntity(pos, state);
-        ent.set(state.get(DELAY));
-        return ent;
+        return new RandomRedstoneBlockEntity(pos, state);
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {

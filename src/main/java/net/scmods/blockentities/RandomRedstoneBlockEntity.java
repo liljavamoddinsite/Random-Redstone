@@ -2,13 +2,14 @@ package net.scmods.blockentities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.scmods.BlockEntityHost;
 import net.scmods.RandomRedstone;
 
 public class RandomRedstoneBlockEntity extends BlockEntity implements BlockEntityHost.Hosted {
     private int power = 0;
-    private int delay = 0;
+    private int delay = 1;
     private int ticks = 0;
     private boolean latched = false;
 
@@ -40,5 +41,17 @@ public class RandomRedstoneBlockEntity extends BlockEntity implements BlockEntit
             this.latched = true;
         }
         return this.power;
+    }
+
+    @Override
+    public void writeNbt(NbtCompound nbt) {
+        nbt.putInt("delay", delay);
+        super.writeNbt(nbt);
+    }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        delay = nbt.getInt("delay");
     }
 }

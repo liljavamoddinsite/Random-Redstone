@@ -10,14 +10,14 @@
             "item": "minecraft:iron_ingot"
         },
         "R": {
-            "item": "randomredstone:random_essence"
+            "item": "minecraft:redstone"
         },
         "B": {
             "item": "minecraft:redstone_block"
         }
     },
     "result": {
-        "item": "mfmutils:acacia_bench",
+        "item": "randomredstone:random_redstone_block",
         "count": 1
     }
 }

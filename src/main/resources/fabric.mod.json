@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "randomredstone",
-  "version": "1.2.0",
+  "version": "1.0.0",
 
   "name": "Random Redstone",
   "description": "Literally randomizers and redstone signal tools",

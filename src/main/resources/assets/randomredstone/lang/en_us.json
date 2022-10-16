@@ -1,4 +1,5 @@
 {
     "block.randomredstone.random_redstone_block": "Random Redstone Block",
-    "itemGroup.randomredstone.randomredstoneitemgroup": "Modern Furniture Mod"
+    "block.randomredstone.waveform_redstone_block": "Waveform Redstone Block",
+    "itemGroup.randomredstone.randomredstoneitemgroup": "Random Redstone"
 }

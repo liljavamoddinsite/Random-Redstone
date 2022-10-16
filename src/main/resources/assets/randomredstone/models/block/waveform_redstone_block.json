@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"outside": "randomredstone:block/sine_casing",
 		"particle": "randomredstone:block/sine_anim",

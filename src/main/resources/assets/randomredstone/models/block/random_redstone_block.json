@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"outside": "randomredstone:block/noise_casing",
 		"particle": "randomredstone:block/noise_anim",

@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 import net.scmods.BlockEntityHost;
 import net.scmods.RandomRedstone;
 import net.scmods.blockentities.RandomRedstoneBlockEntity;
+import net.scmods.blockentities.WaveformRedstoneBlockEntity;
 
 public class WaveformRedstoneBlock extends Block implements BlockEntityHost {
     public static final IntProperty DELAY = Properties.DELAY;
@@ -34,13 +35,13 @@ public class WaveformRedstoneBlock extends Block implements BlockEntityHost {
     }
 
     @Override
-    public BlockEntityType<RandomRedstoneBlockEntity> getBlockEntityType() {
-        return RandomRedstone.RRB_BlockEntity;
+    public BlockEntityType<WaveformRedstoneBlockEntity> getBlockEntityType() {
+        return RandomRedstone.WRB_BlockEntity;
     }
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new RandomRedstoneBlockEntity(pos, state);
+        return new WaveformRedstoneBlockEntity(pos, state);
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
@@ -48,9 +49,9 @@ public class WaveformRedstoneBlock extends Block implements BlockEntityHost {
             return ActionResult.PASS;
         } else {
             BlockEntity bety = world.getBlockEntity(pos);
-            if (bety instanceof RandomRedstoneBlockEntity) {
+            if (bety instanceof WaveformRedstoneBlockEntity) {
                 world.setBlockState(pos, state.cycle(DELAY), 3);
-                ((RandomRedstoneBlockEntity)bety).set(state.get(DELAY));
+                ((WaveformRedstoneBlockEntity)bety).set(state.get(DELAY));
             }
             player.sendMessage(Text.of("Changed Period to ".concat(String.valueOf((state.get(DELAY) * 10))).concat(" ticks")), true);
             return ActionResult.success(world.isClient);
@@ -64,7 +65,7 @@ public class WaveformRedstoneBlock extends Block implements BlockEntityHost {
 
     @Override
     public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-        if (world.getBlockEntity(pos) instanceof RandomRedstoneBlockEntity rng)
+        if (world.getBlockEntity(pos) instanceof WaveformRedstoneBlockEntity rng)
             return rng.getWeakRedstonePower();
         return 0;
     }

@@ -14,9 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.scmods.blocks.RandomRedstoneBlock;
-
-import java.util.ArrayList;
 
 public class RandomRedstone implements ModInitializer {
     public static final String MODID = "randomredstone";

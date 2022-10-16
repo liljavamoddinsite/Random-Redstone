@@ -4,10 +4,11 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.AbstractBlock.Settings;
-import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -25,7 +26,12 @@ public class RandomRedstone implements ModInitializer {
     public static final Settings RRB_Settings = FabricBlockSettings.of(Material.METAL)
             .strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL).nonOpaque();
     public static final Block RRB_Block = new RandomRedstoneBlock(RRB_Settings);
-    public static final BlockEntity RRB_BlockEntity = new RandomRedstoneBlockEntity();
+
+    public static final BlockEntityType<RandomRedstoneBlockEntity> RRB_BlockEntity = Registry.register(
+            Registry.BLOCK_ENTITY_TYPE,
+            new Identifier("tutorial", "demo_block_entity"),
+            FabricBlockEntityTypeBuilder.create(RandomRedstoneBlockEntity::new, RRB_Block).build()
+    );
 
     // Create Group
     public static final ItemGroup RR_GROUP = FabricItemGroupBuilder.create(new Identifier(MODID, "randomredstoneitemgroup"))

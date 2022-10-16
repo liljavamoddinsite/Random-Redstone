@@ -1,0 +1,42 @@
+{
+	"textures": {
+		"outside": "minecraft:block/iron_trapdoor",
+		"inside": "randomredstone:block/noise_8",
+		"particle": "randomredstone:block/noise_8"
+	},
+	"elements": [
+		{
+			"name": "outside",
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#outside"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#outside"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#outside"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#outside"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#outside"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#outside"}
+			}
+		},
+		{
+			"name": "inside",
+			"from": [0.5, 0.5, 0.5],
+			"to": [15.5, 15.5, 15.5],
+			"faces": {
+				"north": {"uv": [0.5, 0.5, 15.5, 15.5], "texture": "#inside"},
+				"east": {"uv": [0.5, 0.5, 15.5, 15.5], "texture": "#inside"},
+				"south": {"uv": [0.5, 0.5, 15.5, 15.5], "texture": "#inside"},
+				"west": {"uv": [0.5, 0.5, 15.5, 15.5], "texture": "#inside"},
+				"up": {"uv": [0.5, 0.5, 15.5, 15.5], "texture": "#inside"},
+				"down": {"uv": [0.5, 0.5, 15.5, 15.5], "texture": "#inside"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		}
+	}
+}

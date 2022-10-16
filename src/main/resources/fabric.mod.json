@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "randomredstone",
+  "version": "1.0.0",
+
+  "name": "Random Redstone",
+  "description": "Literally randomizers and redstone signal tools",
+  "authors": [
+    "SirCode"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/modern-furniture-mod-mfm-utilities",
+    "issues": "https://github.com/MisterSirCode/Random-Redstone/issues",
+    "sources": "https://github.com/MisterSirCode/Random-Redstone"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/randomredstone/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.scmods.RandomRedstone"
+    ]
+  },
+  "mixins": [
+    "randomredstone.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

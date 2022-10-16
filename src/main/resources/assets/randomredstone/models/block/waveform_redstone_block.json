@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"outside": "randomredstone:block/noise_casing",
-		"particle": "randomredstone:block/noise_anim",
-		"inside": "randomredstone:block/noise_anim"
+		"outside": "randomredstone:block/sine_casing",
+		"particle": "randomredstone:block/sine_anim",
+		"inside": "randomredstone:block/sine_anim"
 	},
 	"elements": [
 		{

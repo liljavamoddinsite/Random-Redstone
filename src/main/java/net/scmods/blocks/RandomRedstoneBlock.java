@@ -35,21 +35,6 @@ public class RandomRedstoneBlock extends Block {
         }
     }
 
-    protected void updatePowered(World world, BlockPos pos, BlockState state) {
-        if (!world.getBlockTickScheduler().isTicking(pos, this)) {
-            System.out.println("test");
-            world.createAndScheduleBlockTick(pos, this, state.get(DELAY) * 2, TickPriority.HIGH);
-        }
-    }
-
-    public boolean isLocked(WorldView world, BlockPos pos, BlockState state) {
-        return false;
-    }
-
-    protected boolean hasPower(World world, BlockPos pos, BlockState state) {
-        return true;
-    }
-
     @Override
     public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.getWeakRedstonePower(world, pos, direction);

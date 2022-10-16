@@ -20,22 +20,25 @@ import java.util.ArrayList;
 public class RandomRedstone implements ModInitializer {
     public static final String MODID = "randomredstone";
 
-//    public static final ItemGroup RR_GROUP = FabricItemGroupBuilder.create(new Identifier(MODID, "mfmitemgroup"))
-//        .icon(() -> new ItemStack(typeLists.get(0).get(6)))
-//        .build();
+    // Initialize Blocks
+    public static final Settings RRB_Settings = FabricBlockSettings.of(Material.METAL)
+            .strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL).nonOpaque();
+    public static final Block RRB_Block = new Block(RRB_Settings);
+
+    // Create Group
+    public static final ItemGroup RR_GROUP = FabricItemGroupBuilder.create(new Identifier(MODID, "randomredstoneitemgroup"))
+            .icon(() -> new ItemStack(RRB_Block))
+            .build();
+
+    public void register(Block block, String name) {
+        Registry.register(Registry.BLOCK, new Identifier(MODID, name), block);
+        Registry.register(Registry.ITEM, new Identifier(MODID, name),
+                new BlockItem(block, new FabricItemSettings().group(RR_GROUP)));
+    }
 
     @Override
     public void onInitialize() {
-
-        // Add Furniture
-//        for (int i = 0; i < furnitures.length; i++) {
-//            ArrayList<Block> tempBlocks = typeLists.get(i);
-//            for (int j = 0; j < vanillaLogs.length; j++) {
-//                String currentName = vanillaLogs[j] + "_" + furnitures[i];
-//                Registry.register(Registry.BLOCK, new Identifier(MODID, currentName), tempBlocks.get(j));
-//                Registry.register(Registry.ITEM, new Identifier(MODID, currentName),
-//                    new BlockItem(tempBlocks.get(j), new FabricItemSettings().group(RR_GROUP)));
-//            }
-//        }
+        // Registr Blocks
+        register(RRB_Block, "random_redstone_block");
     }
 }

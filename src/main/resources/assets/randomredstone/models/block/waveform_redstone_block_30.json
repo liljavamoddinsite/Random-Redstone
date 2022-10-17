@@ -1,0 +1,8 @@
+{
+	"parent": "randomredstone:block/waveform_redstone_block",
+	"textures": {
+		"outside": "randomredstone:block/sine_casing",
+		"particle": "randomredstone:block/sine_anim_30",
+		"inside": "randomredstone:block/sine_anim_30"
+	}
+}

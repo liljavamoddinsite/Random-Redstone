@@ -1,9 +1,4 @@
 {
-	"textures": {
-		"outside": "randomredstone:block/noise_casing",
-		"particle": "randomredstone:block/noise_anim",
-		"inside": "randomredstone:block/noise_anim"
-	},
 	"elements": [
 		{
 			"name": "outside",

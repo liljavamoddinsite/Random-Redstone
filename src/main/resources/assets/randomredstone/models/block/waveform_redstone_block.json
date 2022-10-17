@@ -1,9 +1,4 @@
 {
-	"textures": {
-		"outside": "randomredstone:block/sine_casing",
-		"particle": "randomredstone:block/sine_anim",
-		"inside": "randomredstone:block/sine_anim"
-	},
 	"elements": [
 		{
 			"name": "outside",

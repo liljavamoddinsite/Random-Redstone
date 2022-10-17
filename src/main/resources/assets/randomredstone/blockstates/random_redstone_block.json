@@ -1,7 +1,16 @@
 {
     "variants": {
-        "": {
-            "model": "randomredstone:block/random_redstone_block"
+        "delay=1": {
+            "model": "randomredstone:block/random_redstone_block_2"
+        },
+        "delay=2": {
+            "model": "randomredstone:block/random_redstone_block_4"
+        },
+        "delay=3": {
+            "model": "randomredstone:block/random_redstone_block_6"
+        },
+        "delay=4": {
+            "model": "randomredstone:block/random_redstone_block_8"
         }
     }
 }

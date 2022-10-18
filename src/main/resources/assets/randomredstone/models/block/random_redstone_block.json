@@ -1,4 +1,9 @@
 {
+	"textures": {
+		"inside": "#core",
+		"outside": "#casing",
+		"particle": "#core"
+	},
 	"elements": [
 		{
 			"name": "outside",

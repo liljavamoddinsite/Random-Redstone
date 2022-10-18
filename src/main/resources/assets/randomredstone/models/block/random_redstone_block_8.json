@@ -1,8 +1,7 @@
 {
 	"parent": "randomredstone:block/random_redstone_block",
 	"textures": {
-		"outside": "randomredstone:block/noise_casing",
-		"particle": "randomredstone:block/noise_anim_8",
-		"inside": "randomredstone:block/noise_anim_8"
+		"casing": "randomredstone:block/noise_casing",
+		"core": "randomredstone:block/noise_anim_8"
 	}
 }

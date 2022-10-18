@@ -55,5 +55,6 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         delay = nbt.getInt("delay");
+        period = (float)(Math.PI * 2.0 / (delay * 10));
     }
 }

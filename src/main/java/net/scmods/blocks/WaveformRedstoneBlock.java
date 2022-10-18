@@ -51,7 +51,7 @@ public class WaveformRedstoneBlock extends Block implements BlockEntityHost {
             BlockEntity bety = world.getBlockEntity(pos);
             if (bety instanceof WaveformRedstoneBlockEntity) {
                 world.setBlockState(pos, state.cycle(DELAY), 3);
-                ((WaveformRedstoneBlockEntity)bety).set(state.get(DELAY));
+                ((WaveformRedstoneBlockEntity)bety).set(state.get(DELAY) + 1);
             }
             player.sendMessage(Text.of("Changed Period to ".concat(String.valueOf((state.get(DELAY) * 10))).concat(" ticks")), true);
             return ActionResult.success(world.isClient);

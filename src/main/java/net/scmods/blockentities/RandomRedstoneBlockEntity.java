@@ -21,6 +21,13 @@ public class RandomRedstoneBlockEntity extends BlockEntity implements BlockEntit
         delay = value;
     }
 
+    public static int interpretDelay(int delay) {
+        int fdelay = 0;
+        if (delay == 4) fdelay = 1;
+        else fdelay = delay + 1;
+        return fdelay;
+    }
+
     @Override
     public void tick()
     {

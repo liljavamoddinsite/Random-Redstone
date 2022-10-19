@@ -2,6 +2,7 @@ package net.scmods.blockentities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.scmods.BlockEntityHost;
 import net.scmods.RandomRedstone;
@@ -32,7 +33,6 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     @Override
     public void tick()
     {
-        System.out.println(ticks);
         if (ticks >= (delay * 10)) {
             this.latched = false;
             assert this.world != null;
@@ -53,16 +53,16 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
         return this.power;
     }
 
-//    @Override
-//    public void writeNbt(NbtCompound nbt) {
-//        nbt.putInt("delay", delay);
-//        super.writeNbt(nbt);
-//    }
-//
-//    @Override
-//    public void readNbt(NbtCompound nbt) {
-//        super.readNbt(nbt);
-//        delay = nbt.getInt("delay");
-//        period = (float)(Math.PI * 2.0 / (delay * 10));
-//    }
+    @Override
+    public void writeNbt(NbtCompound nbt) {
+        nbt.putInt("delay", delay);
+        super.writeNbt(nbt);
+    }
+
+    @Override
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        delay = nbt.getInt("delay");
+        period = (float)(Math.PI * 2.0 / (delay * 10));
+    }
 }

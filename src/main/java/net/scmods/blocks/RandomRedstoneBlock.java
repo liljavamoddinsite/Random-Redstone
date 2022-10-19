@@ -51,9 +51,9 @@ public class RandomRedstoneBlock extends Block implements BlockEntityHost {
             BlockEntity bety = world.getBlockEntity(pos);
             if (bety instanceof RandomRedstoneBlockEntity) {
                 world.setBlockState(pos, state.cycle(DELAY), 3);
-                ((RandomRedstoneBlockEntity)bety).set(state.get(DELAY));
+                ((RandomRedstoneBlockEntity)bety).set(RandomRedstoneBlockEntity.interpretDelay(state.get(DELAY)));
             }
-            player.sendMessage(Text.of("Changed delay to ".concat(String.valueOf((state.get(DELAY) * 2))).concat(" ticks")), true);
+            player.sendMessage(Text.of("Changed delay to ".concat(String.valueOf((RandomRedstoneBlockEntity.interpretDelay(state.get(DELAY)) * 2))).concat(" ticks")), true);
             return ActionResult.success(world.isClient);
         }
     }

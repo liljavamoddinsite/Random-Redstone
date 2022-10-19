@@ -20,7 +20,7 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
 
     public void set(int value) {
         delay = value;
-        //period = (float)(Math.PI * 2.0 / (value * 10));
+        period = (float)(Math.PI * 2.0 / (value * 10));
     }
 
     public static int interpretDelay(int delay) {
@@ -33,12 +33,12 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     @Override
     public void tick()
     {
-        if (ticks >= (delay * 10)) {
-            this.latched = false;
-            assert this.world != null;
-            this.world.updateNeighbors(getPos(), getCachedState().getBlock());
-            ticks = 0;
-        } else ticks++;
+        if (ticks >= (delay * 10)) ticks = 0;
+        else ticks++;
+        // Output as fast as possible...
+        this.latched = false;
+        assert this.world != null;
+        this.world.updateNeighbors(getPos(), getCachedState().getBlock());
     }
 
     public int getWeakRedstonePower()
@@ -46,8 +46,8 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
         if (!this.latched)
         {
             assert this.world != null;
-            this.power = this.world.random.nextBetween(0, 15);
-            //this.power = (int)((Math.cos(period * Math.floor(ticks)) + 1) / 2 * 15);
+            //this.power = this.world.random.nextBetween(0, 15);
+            this.power = (int)((Math.cos(period * Math.floor(ticks)) + 1) / 2 * 15);
             this.latched = true;
         }
         return this.power;

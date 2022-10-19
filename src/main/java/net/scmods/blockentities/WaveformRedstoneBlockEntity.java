@@ -15,7 +15,7 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     private boolean latched = false;
 
     public WaveformRedstoneBlockEntity(BlockPos pos, BlockState state) {
-        super(RandomRedstone.RRB_BlockEntity, pos, state);
+        super(RandomRedstone.WRB_BlockEntity, pos, state);
     }
 
     public void set(int value) {
@@ -26,8 +26,6 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     @Override
     public void tick()
     {
-        System.out.println(this.ticks);
-        System.out.println(this.delay * 10);
         if (ticks >= (delay * 10)) {
             this.latched = false;
             assert this.world != null;

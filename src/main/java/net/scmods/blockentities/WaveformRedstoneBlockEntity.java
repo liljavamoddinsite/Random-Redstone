@@ -26,6 +26,8 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     @Override
     public void tick()
     {
+        System.out.println(this.ticks);
+        System.out.println(this.delay * 10);
         if (ticks >= (delay * 10)) {
             this.latched = false;
             assert this.world != null;

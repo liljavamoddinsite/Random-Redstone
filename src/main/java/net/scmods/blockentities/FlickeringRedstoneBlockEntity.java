@@ -33,7 +33,7 @@ public class FlickeringRedstoneBlockEntity extends BlockEntity implements BlockE
         if (!this.latched)
         {
             assert this.world != null;
-            if (enabled)
+            if (this.enabled)
                 this.power = this.world.random.nextBetween(0, 1) * 15;
             else
                 this.power = 0;

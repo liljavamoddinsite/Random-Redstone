@@ -1,7 +1,7 @@
 {
 	"parent": "randomredstone:block/waveform_redstone_block",
 	"textures": {
-		"casing": "randomredstone:block/sine_casing",
+		"casing": "randomredstone:block/shiny_casing",
 		"core": "randomredstone:block/sine_anim_50"
 	}
 }

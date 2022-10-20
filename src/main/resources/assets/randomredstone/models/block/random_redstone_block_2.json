@@ -1,7 +1,7 @@
 {
 	"parent": "randomredstone:block/random_redstone_block",
 	"textures": {
-		"casing": "randomredstone:block/noise_casing",
+		"casing": "randomredstone:block/shiny_casing",
 		"core": "randomredstone:block/noise_anim_2"
 	}
 }

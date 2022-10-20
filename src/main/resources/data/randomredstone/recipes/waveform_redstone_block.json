@@ -1,9 +1,9 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "ISI",
+        "IWI",
         "RBR",
-        "ISI"
+        "IWI"
     ],
     "key": {
         "I": {
@@ -15,8 +15,8 @@
         "B": {
             "item": "minecraft:redstone_block"
         },
-        "S": {
-            "item": "minecraft:soul_sand"
+        "W": {
+            "item": "minecraft:echo_shard"
         }
     },
     "result": {

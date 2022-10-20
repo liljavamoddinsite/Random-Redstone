@@ -1,9 +1,9 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "ISI",
+        "IFI",
         "RBR",
-        "ISI"
+        "IFI"
     ],
     "key": {
         "I": {
@@ -15,8 +15,8 @@
         "B": {
             "item": "minecraft:redstone_block"
         },
-        "S": {
-            "item": "minecraft:soul_sand"
+        "F": {
+            "item": "minecraft:fire_charge"
         }
     },
     "result": {

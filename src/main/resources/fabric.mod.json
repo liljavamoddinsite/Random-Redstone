@@ -4,7 +4,7 @@
   "version": "1.2.0",
 
   "name": "Random Redstone",
-  "description": "Literally randomizers and redstone signal tools",
+  "description": "Literally just some primitive tools for redstone",
   "authors": [
     "SirCode"
   ],

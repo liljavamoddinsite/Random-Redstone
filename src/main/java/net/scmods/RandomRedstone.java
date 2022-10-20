@@ -16,8 +16,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.scmods.blockentities.FlickeringRedstoneBlockEntity;
 import net.scmods.blockentities.RandomRedstoneBlockEntity;
 import net.scmods.blockentities.WaveformRedstoneBlockEntity;
+import net.scmods.blocks.FlickeringRedstoneBlock;
 import net.scmods.blocks.RandomRedstoneBlock;
 import net.scmods.blocks.WaveformRedstoneBlock;
 
@@ -43,6 +45,15 @@ public class RandomRedstone implements ModInitializer {
             FabricBlockEntityTypeBuilder.create(WaveformRedstoneBlockEntity::new, WRB_Block).build()
     );
 
+    public static final Settings FRB_Settings = FabricBlockSettings.of(Material.METAL)
+            .strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL).nonOpaque();
+    public static final Block FRB_Block = new FlickeringRedstoneBlock(FRB_Settings);
+    public static final BlockEntityType<FlickeringRedstoneBlockEntity> FRB_BlockEntity = Registry.register(
+            Registry.BLOCK_ENTITY_TYPE,
+            new Identifier("randomredstone", "flickering_redstone_block_entity"),
+            FabricBlockEntityTypeBuilder.create(FlickeringRedstoneBlockEntity::new, FRB_Block).build()
+    );
+
     // Create Group
     public static final ItemGroup RR_GROUP = FabricItemGroupBuilder.create(new Identifier(MODID, "randomredstoneitemgroup"))
             .icon(() -> new ItemStack(RRB_Block))
@@ -59,7 +70,9 @@ public class RandomRedstone implements ModInitializer {
         // Register Blocks
         BlockRenderLayerMap.INSTANCE.putBlock(RRB_Block, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(WRB_Block, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(FRB_Block, RenderLayer.getCutout());
         register(RRB_Block, "random_redstone_block");
         register(WRB_Block, "waveform_redstone_block");
+        register(FRB_Block, "flickering_redstone_block");
     }
 }

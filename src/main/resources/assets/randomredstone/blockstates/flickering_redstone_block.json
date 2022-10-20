@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "enabled=true": {
+            "model": "randomredstone:block/flickering_redstone_block_on"
+        },
+        "enabled=false": {
+            "model": "randomredstone:block/flickering_redstone_block_off"
+        }
+    }
+}

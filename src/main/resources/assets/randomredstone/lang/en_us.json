@@ -1,5 +1,6 @@
 {
     "block.randomredstone.random_redstone_block": "Random Redstone Block",
     "block.randomredstone.waveform_redstone_block": "Waveform Redstone Block",
+    "block.randomredstone.flickering_redstone_block": "Flickering Redstone Block",
     "itemGroup.randomredstone.randomredstoneitemgroup": "Random Redstone"
 }

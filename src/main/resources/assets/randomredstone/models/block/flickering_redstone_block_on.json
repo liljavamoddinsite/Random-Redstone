@@ -1,0 +1,7 @@
+{
+	"parent": "randomredstone:block/flickering_redstone_block_on",
+	"textures": {
+		"casing": "randomredstone:block/shiny_casing",
+		"core": "randomredstone:block/flickering_on"
+	}
+}

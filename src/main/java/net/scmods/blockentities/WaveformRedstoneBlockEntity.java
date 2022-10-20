@@ -10,7 +10,7 @@ import net.scmods.RandomRedstone;
 public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEntityHost.Hosted {
     private int power = 0;
     private int delay = 1;
-    private float period = (float)(Math.PI * 2.0 / 10);
+    private float period = (float)(Math.PI * 2.0 / 30);
     private int ticks = 0;
     private boolean latched = false;
 
@@ -20,7 +20,7 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
 
     public void set(int value) {
         delay = value;
-        period = (float)(Math.PI * 2.0 / (value * 10));
+        period = (float)(Math.PI * 2.0 / (value * 20 + 10));
     }
 
     public static int interpretDelay(int delay) {
@@ -33,7 +33,7 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     @Override
     public void tick()
     {
-        if (ticks >= (delay * 10)) ticks = 0;
+        if (ticks >= (delay * 20 + 10)) ticks = 0;
         else ticks++;
         // Output as fast as possible...
         this.latched = false;
@@ -63,6 +63,6 @@ public class WaveformRedstoneBlockEntity extends BlockEntity implements BlockEnt
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         delay = nbt.getInt("delay");
-        period = (float)(Math.PI * 2.0 / (delay * 10));
+        period = (float)(Math.PI * 2.0 / (delay * 20 + 10));
     }
 }

@@ -51,9 +51,11 @@ public class FlickeringRedstoneBlock extends Block implements BlockEntityHost {
             return ActionResult.PASS;
         } else {
             BlockEntity bety = world.getBlockEntity(pos);
-            if (bety instanceof FlickeringRedstoneBlockEntity)
+            if (bety instanceof FlickeringRedstoneBlockEntity) {
                 world.setBlockState(pos, state.cycle(ENABLED), 3);
-            if (state.get(ENABLED))
+                ((FlickeringRedstoneBlockEntity) bety).flip();
+            }
+            if (!state.get(ENABLED))
                 player.sendMessage(Text.of("Flickerer Enabled"), true);
             else
                 player.sendMessage(Text.of("Flickerer Disabled"), true);

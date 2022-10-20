@@ -17,6 +17,11 @@ public class FlickeringRedstoneBlockEntity extends BlockEntity implements BlockE
         super(RandomRedstone.FRB_BlockEntity, pos, state);
     }
 
+    public boolean flip() {
+        this.enabled = !this.enabled;
+        return this.enabled;
+    }
+
     @Override
     public void tick()
     {

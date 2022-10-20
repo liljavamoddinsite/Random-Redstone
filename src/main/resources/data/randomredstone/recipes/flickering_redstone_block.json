@@ -1,21 +1,21 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "IFI",
-        "RBR",
-        "IFI"
+        "IDI",
+        "EBE",
+        "IDI"
     ],
     "key": {
         "I": {
             "item": "minecraft:iron_ingot"
         },
-        "R": {
-            "item": "minecraft:redstone"
+        "D": {
+            "item": "minecraft:diamond"
         },
         "B": {
             "item": "minecraft:redstone_block"
         },
-        "F": {
+        "E": {
             "item": "minecraft:fire_charge"
         }
     },
